@@ -14,12 +14,12 @@ class Animal
       _age = age;
       _health = health;
     }
-    public int GetAnimalByAge() 
+    public bool GetAnimalByAge(int maxAge) 
     {
-        return _age;
+        return (_age < maxAge); 
     }
 
-    public int GetAnimalByhealth() 
+    public int GetAnimalByhealth(int health) 
     {
         return _health;
     }

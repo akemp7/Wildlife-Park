@@ -24,9 +24,21 @@ using AnimalRecord;
        string ageLimit = Console.ReadLine();
        int ageLimitInput = int.Parse(ageLimit);
 
-       List<Animal> AnimalMatchingSearch = new List<Animal>(0);
+       List<Animal> AnimalsMatchingSearch = new List<Animal>(0);
 
-
+       foreach (Animal animaldata in Animals)
+      {
+        if (animaldata.GetAnimalByAge(ageLimitInput ))
+        {
+          AnimalsMatchingSearch.Add(animaldata);
+        }
+      }
+      foreach(Animal animaldata in  AnimalsMatchingSearch)
+      {
+        
+        Console.WriteLine(animaldata.GetAnimalByAge(ageLimitInput));
+        
+      }
 
     }
 
