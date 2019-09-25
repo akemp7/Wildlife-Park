@@ -15,30 +15,47 @@ using AnimalRecord;
 
        List<Animal> Animals = new List<Animal>() { tiger, lion, monkey, chimpanzee, snake };
 
-       Console.WriteLine("Enter the name of the animal:");
-       string NameInput = Console.ReadLine();
-       Console.WriteLine("Enter the health of the animal:");
+    //    Console.WriteLine("Enter the name of the animal:");
+    //    string NameInput = Console.ReadLine();
+       Console.WriteLine("Enter the max health of the animal:");
        string healthBar = Console.ReadLine();
        int healthBarInput = int.Parse(healthBar);
-       Console.WriteLine("Enter the age of the animal:");
+       Console.WriteLine("Enter the max age of the animal:");
        string ageLimit = Console.ReadLine();
        int ageLimitInput = int.Parse(ageLimit);
 
        List<Animal> AnimalsMatchingSearch = new List<Animal>(0);
 
+    //    foreach (Animal animaldata in Animals)
+    //    {
+    //        if (string.IsNullOrEmpty(animaldata.GetAnimalByName()))
+    //        {
+    //           AnimalsMatchingSearch.Add(animaldata); 
+              
+    //        }
+    //    }
+    //    foreach(Animal animaldata in AnimalsMatchingSearch)
+    //    {
+    //        Console.WriteLine(animaldata.GetAnimalByName());
+    //    }
+
+
+
        foreach (Animal animaldata in Animals)
       {
-        if (animaldata.GetAnimalByAge(ageLimitInput ))
+        if (animaldata.GetAnimalByAge(ageLimitInput) && animaldata.GetAnimalByhealth(healthBarInput))
         {
           AnimalsMatchingSearch.Add(animaldata);
-        }
+        } 
       }
-      foreach(Animal animaldata in  AnimalsMatchingSearch)
-      {
-        
-        Console.WriteLine(animaldata.GetAnimalByAge(ageLimitInput));
-        
+      if (AnimalsMatchingSearch.Count == 0) {
+          Console.WriteLine("There is no animal available according to your search");
       }
+        foreach(Animal animaldata in AnimalsMatchingSearch)
+    {
+          Console.WriteLine(animaldata.GetAnimalByName());
+    }
+
 
     }
 

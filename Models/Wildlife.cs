@@ -14,15 +14,22 @@ class Animal
       _age = age;
       _health = health;
     }
+
+     public string GetAnimalByName() 
+    {
+        return _name;
+    }
+
     public bool GetAnimalByAge(int maxAge) 
     {
         return (_age < maxAge); 
     }
 
-    public int GetAnimalByhealth(int health) 
+    public bool GetAnimalByhealth(int maxHealth) 
     {
-        return _health;
-    }
+        return  (_health < maxHealth);  
+            
+             }
 
   }
 }
