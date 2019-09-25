@@ -31,12 +31,13 @@ using AnimalRecord;
            
 
              
-               Animals.Add(newAnimalName);
+            Animals.Add(newAnimalName);
             
             foreach(Animal animal in Animals)
             {
-                Console.WriteLine(animal.GetAnimalByName());
-                Console.WriteLine(animal.GetNewInstanceAnimalByAge());
+                Console.WriteLine("-----------");
+                Console.WriteLine(animal.GetAnimalByName().ToLower());
+               Console.WriteLine(animal.GetNewInstanceAnimalByAge());
               Console.WriteLine(animal.GetNewInstanceAnimalByHealth());
             }
 
